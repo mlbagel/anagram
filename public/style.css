@@ -17,10 +17,10 @@ padding: 15%,0%,0%,0%;}
 h1 {color: red;}
 
 p.ital {font-style: italic;
-text-align: left;}
+text-align: justify;}
 
 
-input {line-height: 20px;}
+input {line-height: 50px;}
 input.showme, textarea {color: white;
 background-color: red;
 text-align: center;}
