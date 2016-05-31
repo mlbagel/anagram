@@ -3,10 +3,11 @@
 body {background:#f8f8f8;
 font-family:'montserrat', arial;
 height: 100%;
-width: 100;}
+width: 100%;}
 
 .container {width: 960px;
-margin: auto;}
+margin: auto;
+text-align: center;}
 
 .home {background:url('images/tiles-01.png');}
 
@@ -18,4 +19,5 @@ p.ital {font-style: italic;}
 
 
 .showme {color: white;
-background-color: red;}
+background-color: red;
+text-align: center;}
