@@ -20,7 +20,7 @@ class Word<ActiveRecord::Base
         end
       end
     end
-      anagram_list
+      real_words_list
     end
 
   #reverse letters in array
