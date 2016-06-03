@@ -18,24 +18,25 @@ padding: 15%,0%,0%,0%;
 
 h1 {color: red;
 }
+h2 {color: red;
+font-size: 20px;}
 
 p.ital {font-style: italic;
 text-align: center;
-font-size: 30px;
+font-size: 18px;
 }
 
 
 input {line-height: 50px;
-  border: none;
 }
 
 input.showme, textarea {
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   background-color: red;
   text-align: center;
+  border: none;
 }
-
- li{
+ li{ color: red;
   list-style-type: none;
 }
