@@ -3,24 +3,39 @@
 body {background:#f8f8f8;
 font-family:'montserrat', arial;
 height: 100%;
-width: 100%;}
+width: 100%;
+}
 
 .container {width: 960px;
 margin: auto;
 text-align: center;
-padding: 15%,0%,0%,0%;}
+padding: 15%,0%,0%,0%;
+}
 
 .home {background:url('images/tiles-01.png');}
 
 .answer {background:url('images/tiles-02.png');}
 
-h1 {color: red;}
+h1 {color: red;
+}
 
 p.ital {font-style: italic;
-text-align: justify;}
+text-align: center;
+font-size: 30px;
+}
 
 
-input {line-height: 50px;}
-input.showme, textarea {color: white;
-background-color: red;
-text-align: center;}
+input {line-height: 50px;
+  border: none;
+}
+
+input.showme, textarea {
+  font-size: 30px;
+  color: white;
+  background-color: red;
+  text-align: center;
+}
+
+ li{
+  list-style-type: none;
+}
