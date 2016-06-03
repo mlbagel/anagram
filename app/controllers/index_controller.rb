@@ -14,5 +14,9 @@ end
 post '/' do
 
   @word = params[:word]
-  redirect "/anagrams/#{@word}"
+  if @word.length == 3
+    redirect "/anagrams/#{@word}"
+  else
+    "Sorry, this is not a 3 letter word"
+  end
 end

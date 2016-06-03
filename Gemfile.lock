@@ -67,5 +67,8 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
 
+RUBY VERSION
+   ruby 2.2.1p85
+
 BUNDLED WITH
-   1.12.1
+   1.12.5

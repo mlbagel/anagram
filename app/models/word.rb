@@ -12,7 +12,14 @@ class Word<ActiveRecord::Base
         anagram_list << arr[x].to_s + extra_letters.join("")
 
         anagram_list << arr[x].to_s + reverse_letters(extra_letters).join("")
+
+      real_words_list = []
+      anagram_list.each do |match|
+        if Word.find_by_text(match).present?
+          real_words_list << match
+        end
       end
+    end
       anagram_list
     end
 
