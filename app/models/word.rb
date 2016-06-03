@@ -1,25 +1,23 @@
 class Word<ActiveRecord::Base
 
   def self.find_anagrams(string)
-    #convert word to an array of letters
-      arr=string.split""
-
       anagram_list=[]
-
+      real_words_list = []
+          #convert word to an array of letters
+      arr=string.split""
+        #join all the letters into three word combinations
       arr.each_with_index do |i,x|
         extra_letters=arr.reject{|a| a==i}
 
         anagram_list << arr[x].to_s + extra_letters.join("")
 
         anagram_list << arr[x].to_s + reverse_letters(extra_letters).join("")
-
-      real_words_list = []
+      end
       anagram_list.each do |match|
         if Word.find_by_text(match).present?
           real_words_list << match
         end
       end
-    end
       real_words_list
     end
 
