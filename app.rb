@@ -6,7 +6,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require "sinatra/activerecord"
-require "./config/environments"
+
 
 require 'erb'
 
