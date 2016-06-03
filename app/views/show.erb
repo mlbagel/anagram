@@ -1,11 +1,17 @@
 
   <h1>Anagrams for <%= "#{@word}" %></h1>
-  
-<ul>
+
+<ul class="list">
   <% @anagrams.each do |item| %>
     <li>
       <%= "#{item}"%>
     </li>
   <% end %>
 </ul>
+
+
+
+
+
+
 <a href="/">Back to Home</a>
