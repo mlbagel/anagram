@@ -1,5 +1,13 @@
 class Word<ActiveRecord::Base
 
+  before_create :add_letters
+
+  def add_letters
+    characters = self.text.chars
+    alphabetized_characters = characters.sort
+    self.letters = alphabetized_characters.join
+  end
+
   def self.find_anagrams(string)
       anagram_list=[]
       real_words_list = []
@@ -51,6 +59,16 @@ class Word<ActiveRecord::Base
    end
  end
 
+def self.valid_input(input)
+  if three_letters?(input) && distinct_letters?(input)
+    true
+  else
+     raise Exception.new("Word must be less than or equal to 3 characters.")
+  end
+  end
+end
+
+
 =begin
  def self.valid_input?(input)
     if three_letters?(input) && distinct_letters?(input)
@@ -60,13 +78,3 @@ class Word<ActiveRecord::Base
     end
   end
 =end
-
-def self.valid_input(input)
-  if three_letters?(input) && distinct_letters?(input)
-    true
-  else
-     raise Exception.new("Word must be less than or equal to 3 characters.")
-  end
-end
-
-end

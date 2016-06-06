@@ -11,6 +11,20 @@ get '/anagrams/:word' do
   erb :show
 end
 
+
+
+post '/' do
+    @word = params[:word]
+    begin
+      Word.valid_input(@word)
+      redirect "/anagrams/#{@word}"
+    rescue Exception => error
+      @page="home"
+      @error = error.message
+      erb :index
+    end
+end
+
 =begin
 post '/' do
 
@@ -24,15 +38,3 @@ post '/' do
   end
 end
 =end
-
-post '/' do
-    @word = params[:word]
-    begin
-      Word.valid_input(@word)
-      redirect "/anagrams/#{@word}"
-    rescue Exception => error
-      @page="home"
-      @error = error.message
-      erb :index
-    end
-end
