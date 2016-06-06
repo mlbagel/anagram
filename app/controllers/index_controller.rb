@@ -11,12 +11,28 @@ get '/anagrams/:word' do
   erb :show
 end
 
+=begin
 post '/' do
 
   @word = params[:word]
-  if @word.length == 3
+  if Word.valid_input?(@word)
     redirect "/anagrams/#{@word}"
   else
-    "Sorry, this is not a 3 letter word"
+    @page="home"
+    @error = "Sorry, this is not a valid 3 letter word"
+    erb :index
   end
+end
+=end
+
+post '/' do
+    @word = params[:word]
+    begin
+      Word.valid_input(@word)
+      redirect "/anagrams/#{@word}"
+    rescue Exception => error
+      @page="home"
+      @error = error.message
+      erb :index
+    end
 end
