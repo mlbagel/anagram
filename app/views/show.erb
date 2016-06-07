@@ -2,10 +2,12 @@
   <h1>Anagrams for <span class="smallcaps"><%= "#{@word}" %></span></h1>
 
 <ul class="list">
+  <% if !@anagrams.nil? %>
   <% @anagrams.each do |item| %>
     <li>
-      <%= "#{item}"%>
+      <%= "#{item.text}"%>
     </li>
+  <% end %>
   <% end %>
 </ul>
 
