@@ -1,0 +1,13 @@
+<h1>Your Word is: <%= "#{@word.text.upcase}" %></h1>
+<table class="table table-striped">
+  <thead class="col-md-6">
+    <th>Text</th>
+    <th>Letters</th>
+  </thead>
+  <tbody>
+      <tr class="col-md-6">
+        <td><%= "#{@word.text}" %>"</td>
+        <td><%= "#{@word.letters}" %>"</td>
+      </tr>
+  </tbody>
+</table>

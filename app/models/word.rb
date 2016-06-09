@@ -59,7 +59,7 @@ class Word<ActiveRecord::Base
    end
  end
 
-def self.valid_input(input)
+ def self.valid_input(input)
   if three_letters?(input) && distinct_letters?(input)
     true
   else
