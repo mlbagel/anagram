@@ -1,11 +1,11 @@
 <div class="col-md-6 col-md-offset-3">
-  <h1 class="center">Anagrams for <%= @word %></h1>
+  <h1 class="center">Anagrams for <%= "#{@word}" %></h1>
 
   <ul class="list">
     <% if !@anagrams.nil? %>
       <% @anagrams.each do |item| %>
         <li>
-          <%= "#{item.text}"%>
+          <%= "#{item.text}" %>
         </li>
       <% end %>
     <% end %>
