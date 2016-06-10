@@ -6,8 +6,8 @@ end
 get '/anagrams/:word' do
   @page="answer"
   @word = params[:word]
-  alphabetized_string = @word.chars.sort.join
-  @anagrams = Word.where("letters=?", alphabetized_string)
+  @alphabetized_string = @word.chars.sort.join
+  @anagrams = Word.where("letters=?", @alphabetized_string)
   erb :show
 end
 

@@ -1,15 +1,22 @@
-<h1>Words</h1>
-  <table class="table table-striped">
+<div class="col-md-6 col-md-offset-3">
+  <h1 class="center">Words in Our Dictionary</h1>
+  <br>
+  <table class="table table-hover">
     <thead>
-      <th>Text</th>
-      <th>Letters</th>
+      <th class="center">Text</th>
+      <th class="center">Letters</th>
     </thead>
     <tbody>
       <% @words.each do |word|%>
-        <tr>
-          <td><%= "#{word.text}" %>"</td>
-          <td><%= "#{word.letters}" %>"</td>
+        <tr class="center">
+          <td>
+            <a href="<%= "/words/#{word.id}" %>">
+              <%= "#{word.text}" %>
+            </a>
+          </td>
+          <td><%= word.letters %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+</div>
