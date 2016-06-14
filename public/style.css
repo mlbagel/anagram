@@ -1,6 +1,7 @@
-a {font-family: arial, verdana;
-font-size: 12px;
-font-weight: bold;
+a {font-family: helvetica, verdana;
+font-size: 14px;
+text-align: center;
+text-decoration: underline;
 }
 
 /* Custom default button */

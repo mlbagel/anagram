@@ -1,22 +1,26 @@
 <div class="col-md-6 col-md-offset-3">
-  <h1 class="center">Words in Our Dictionary</h1>
+  <h1 class="center">Dictionary Words</h1>
   <br>
   <table class="table table-hover">
     <thead>
       <th class="center">Text</th>
       <th class="center">Letters</th>
+      <th class="center">Edit</th>
+      <th class="center">Delete</th>
     </thead>
     <tbody>
-      <% @words.each do |word|%>
+      <% @words.sort.each do |word|%>
         <tr class="center">
-          <td>
-            <a href="<%= "/words/#{word.id}" %>">
-              <%= "#{word.text}" %>
-            </a>
-          </td>
+          <td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>
           <td><%= "#{word.letters}" %></td>
+          <td><a href="<%= "/words/#{word.id}/edit" %>" class = "btn btn-primary" role="button">Edit</a></td>
+          <td><form action="<%= "/words/#{word.id}" %>" method="post">
+            <input type="hidden" name="_method" value="Delete"/>
+            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+          </form>
+        </td>
         </tr>
-      <% end %>
+    <% end %>
     </tbody>
   </table>
 </div>

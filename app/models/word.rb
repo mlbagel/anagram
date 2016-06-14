@@ -1,6 +1,7 @@
 class Word<ActiveRecord::Base
 
-  before_create :add_letters
+  before_save :add_letters
+  validates_presence_of :text
 
   def add_letters
     characters = self.text.chars
@@ -40,15 +41,6 @@ class Word<ActiveRecord::Base
       anagram
     end
 
-
-  def self.three_letters?(input)
-      if input.length == 3
-        true
-      else
-        false
-      end
-  end
-
   def self.distinct_letters?(input)
    letter_array = input.chars
    unique_letters = letter_array.uniq
@@ -60,16 +52,31 @@ class Word<ActiveRecord::Base
  end
 
  def self.valid_input(input)
-  if three_letters?(input) && distinct_letters?(input)
-    true
-  else
-     raise Exception.new("Word must be less than or equal to 3 characters.")
-  end
-  end
+   if Word.find_by_text(input).present? && distinct_letters?(input)
+     true
+   else
+     raise Exception.new("This Word is not in our Dictionary.  Please select 'Add Word' to add this word.")
+   end
+ end
 end
 
+=begin def self.three_letters?(input)
+      if input.length == 3
+        true
+      else
+        false
+      end
+  end
 
-=begin
+
+def self.valid_input(input)
+ if three_letters?(input) && distinct_letters?(input)
+   true
+ else
+    raise Exception.new("Word must be less than or equal to 3 characters.")
+ end
+ end
+
  def self.valid_input?(input)
     if three_letters?(input) && distinct_letters?(input)
       true

@@ -8,9 +8,11 @@
           <%= "#{item.text}" %>
         </li>
       <% end %>
+      <% else %>
+      <%= "No Anagrams for this word" %>
     <% end %>
   </ul>
 
-
-  <a href="/" class="smallcaps">Back to Home</a>
+  <nav><a href="/words" class="danger">View all Words</a></nav>
+  <nav><a href="/words/new" class="danger">Add New Words here</a></nav><nav><a href="/" class="smallcaps">Back to Home</a></nav>
 </div>
