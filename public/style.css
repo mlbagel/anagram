@@ -13,6 +13,7 @@ text-decoration: underline;
   background-color: red;
   border: 1px solid red;
 }
+.btn-size {width: 160px;}
 
 body {
 font-family:'montserrat', arial;
@@ -22,20 +23,20 @@ font-family:'montserrat', arial;
 
 .answer {background:url('images/tiles-02.png');}
 
+.newword {background:url('images/tiles-03.png');}
+
 h1 {color: red;
 }
 .center {text-align: center;}
 
 th.center {font-size: 20px;}
 
-div.box {position: relative;
-  left: 0px;
-  }
 
-input {width: 450px;
+input {
   font-size: 30px;
   line-height: 40px;
   text-align: center;
+  width: 395px;
 }
 
 li{list-style-type: none;
@@ -44,11 +45,12 @@ li{list-style-type: none;
 
 #ital {font-style: italic;
 font-size: 18px;
-text-align: left;
-padding: 40px 0 0 0;}
+padding: 40px 0 0 0;
+margin-left: 0;}
+
+.buffer {padding: 100px;}
 
 .showme {line-height: 40px;
-width: 450px;
 font-size: 30px;}
 
 .list {font-size: 30px;
@@ -57,8 +59,4 @@ color: blue;}
 .error {text-align: center;
   font-size: 25px;
 color: green;
-}
-
-.smallcaps {font-variant: small-caps;
-font-size: 18px;
 }

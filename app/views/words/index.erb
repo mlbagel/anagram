@@ -9,7 +9,7 @@
       <th class="center">Delete</th>
     </thead>
     <tbody>
-      <% @words.sort.each do |word|%>
+      <% @words.each do |word|%>
         <tr class="center">
           <td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>
           <td><%= "#{word.letters}" %></td>

@@ -21,7 +21,14 @@
 
   <body class="<%= @page %>">
     <div class="container">
-        <%= yield %>
+
+          <%= yield %>
+
+      <div class="row buffer center">
+        <div class="col-sm-4 col-md-3 col-lg-3 col-lg-offset-0 col-xlg-3 col-xlg-offset-0"><a href="/words" class="btn btn-danger btn-size">Dictionary</a></div>
+        <div class="col-sm-4 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1 col-xlg-3 col-xlg-offset-1"><a href="/words/new" class="btn btn-danger btn-size"> Add a Word</a></div>
+        <div class="col-sm-4 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1 col-xlg-3 col-xlg-offset-1"><a href="/" class="btn btn-danger btn-size">Home</a></div>
+      </div>
     </div>
   </body>
 </html>

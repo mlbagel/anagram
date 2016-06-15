@@ -2,7 +2,8 @@ class Word<ActiveRecord::Base
 
   before_save :add_letters
   validates_presence_of :text
-
+  validates_uniqueness_of :text
+  
   def add_letters
     characters = self.text.chars
     alphabetized_characters = characters.sort
@@ -41,18 +42,10 @@ class Word<ActiveRecord::Base
       anagram
     end
 
-  def self.distinct_letters?(input)
-   letter_array = input.chars
-   unique_letters = letter_array.uniq
-   if unique_letters.length < letter_array.length
-     false
-   else
-     true
-   end
- end
+
 
  def self.valid_input(input)
-   if Word.find_by_text(input).present? && distinct_letters?(input)
+   if Word.find_by_text(input).present?
      true
    else
      raise Exception.new("This Word is not in our Dictionary.  Please select 'Add Word' to add this word.")
@@ -68,6 +61,15 @@ end
       end
   end
 
+  def self.distinct_letters?(input)
+   letter_array = input.chars
+   unique_letters = letter_array.uniq
+   if unique_letters.length < letter_array.length
+     false
+   else
+     true
+   end
+  end
 
 def self.valid_input(input)
  if three_letters?(input) && distinct_letters?(input)

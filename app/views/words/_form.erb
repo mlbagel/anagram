@@ -1,21 +1,23 @@
 
 <% if !@errors.blank? %>
 <div class="danger">
-  <p><%= "#{errors}" %></p>
+  <p><%= "#{@errors}" %></p>
 </div>
 <% end %>
 
-<form role= "form" action="<%= words_form_action(@word) %>" method="post" id="<%= words_form_id(@word) %>" class="<%= words_form_class(@word) %>">
-  <form class="form-horizontal">
-      <input type="hidden" name="_method" value="<%= words_form_method(@word) %>" />
-  <div class="form-group">
-      <label for="text" > </label>
-      <input type="text" name="text" pattern="[A-Za-z]+" value="<%= "#{@word.text}" %>">
-    </div>
+<div class="row center">
+  <form role= "form" action="<%= words_form_action(@word) %>" id="<%= words_form_id(@word) %>" class="<%= words_form_class(@word) %>" method="post">
+    <form class="form-horizontal" class="col-md-6 col-md-offset-3">
+        <input type="hidden" name="_method" value="<%= words_form_method(@word) %>" />
     <div class="form-group">
-      <div>
-        <button type="submit"  class="btn btn-danger showme">Submit New Word</button>
+        <label for="text" > </label>
+        <input type="text" name="text" pattern="[A-Za-z]+" value="<%= "#{@word.text}" %>">
       </div>
-    </div>
+      <div class="form-group">
+        <div>
+          <button type="submit"  class="btn btn-danger showme">Submit New Word</button>
+        </div>
+      </div>
+    </form>
   </form>
-</form>
+</div>
