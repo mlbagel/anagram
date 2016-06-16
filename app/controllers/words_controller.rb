@@ -1,6 +1,6 @@
 get '/words' do
   @page="home"
-  @words = Word.all.order(text: @order)
+  @words = Word.all.order(text: :asc)
 
   erb :"/words/index"
 end
