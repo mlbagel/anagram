@@ -1,6 +1,6 @@
 get '/words' do
   @page="home"
-  @words = Word.all.order(text: :asc)
+  @words = Word.all.order(text: @order)
 
   erb :"/words/index"
 end
@@ -13,15 +13,16 @@ get '/words/new' do
 end
 
 post '/words' do
+  @page="newword"
     @word = Word.create(text: params[:text])
 
-    #if Word.find_by_text(@word).present?
-      #@errors = "This word is already in our Dictionary"
-    #else
-      @word.save
-      redirect "/words/#{@word.id}"
-  #  end
-#  erb :"/words/new"
+    if @word.valid?
+        @word.save
+        redirect "/words/#{@word.id}"
+     else
+        @errors = "This word is already in our Dictionary"
+    end
+  erb :"/words/new"
 end
 
 get '/words/:id/edit' do
@@ -31,16 +32,16 @@ get '/words/:id/edit' do
 end
 
 put '/words/:id' do
+  @page="newword"
   @word = Word.find(params[:id])
   @word.text = params[:text]
 
- if Word.find_by_text(@word).present?
-    @errors = "This word is already in our Dictionary"
+ if @word.valid?
+     @word.save
+     redirect "/words/#{@word.id}"
   else
-   @word.save
-   redirect "/words/#{@word.id}"
+     @errors = "This word is already in our Dictionary"
  end
-
   erb :"/words/edit"
 end
 

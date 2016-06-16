@@ -6,12 +6,12 @@
 <% end %>
 
 <div class="row center">
-  <form role= "form" action="<%= words_form_action(@word) %>" id="<%= words_form_id(@word) %>" class="<%= words_form_class(@word) %>" method="post">
+  <form role="form" action="<%= words_form_action(@word) %>" id="<%= words_form_id(@word) %>" class="<%= words_form_class(@word) %>" method="post">
     <form class="form-horizontal" class="col-md-6 col-md-offset-3">
         <input type="hidden" name="_method" value="<%= words_form_method(@word) %>" />
     <div class="form-group">
         <label for="text" > </label>
-        <input type="text" name="text" pattern="[A-Za-z]+" value="<%= "#{@word.text}" %>">
+        <input type="text" name="text" pattern="[A-Za-z]+"  value="<%= @word.text %>">
       </div>
       <div class="form-group">
         <div>

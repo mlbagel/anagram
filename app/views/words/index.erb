@@ -1,3 +1,4 @@
+@rev=
 <div class="col-md-6 col-md-offset-3">
   <h1 class="center">Dictionary Words</h1>
   <br>
@@ -13,7 +14,7 @@
         <tr class="center">
           <td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>
           <td><%= "#{word.letters}" %></td>
-          <td><a href="<%= "/words/#{word.id}/edit" %>" class = "btn btn-primary" role="button">Edit</a></td>
+          <td></td>
           <td><form action="<%= "/words/#{word.id}" %>" method="post">
             <input type="hidden" name="_method" value="Delete"/>
             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
@@ -24,3 +25,5 @@
     </tbody>
   </table>
 </div>
+<div class="col-md-6 col-md-offset-1">
+  <a href="<%= "/words" %>" class = "btn btn-primary" role="button">Reverse Order</a>

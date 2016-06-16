@@ -1,9 +1,9 @@
 class Word<ActiveRecord::Base
 
   before_save :add_letters
-  validates_presence_of :text
-  validates_uniqueness_of :text
-  
+  validates_presence_of :text, :message => "Must be a minimum of 2 characters."
+  validates_uniqueness_of :text, :message => "This Word is already in our Dictionary!"
+
   def add_letters
     characters = self.text.chars
     alphabetized_characters = characters.sort
@@ -52,6 +52,9 @@ class Word<ActiveRecord::Base
    end
  end
 end
+
+def self.order_of_dict(order)
+  if 
 
 =begin def self.three_letters?(input)
       if input.length == 3

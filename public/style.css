@@ -39,8 +39,11 @@ input {
   width: 395px;
 }
 
-li{list-style-type: none;
- text-align: center;
+ul.list {padding-left: 0px;}
+
+.list li{
+  list-style-type: none;
+  text-align: center;
 }
 
 #ital {font-style: italic;
@@ -54,6 +57,7 @@ margin-left: 0;}
 font-size: 30px;}
 
 .list {font-size: 30px;
+text-align: inherit;
 color: blue;}
 
 .error {text-align: center;

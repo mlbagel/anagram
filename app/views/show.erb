@@ -1,45 +1,15 @@
-<div class="col-md-6 col-md-offset-3">
-  <h1 class="center">Anagrams for <%= "#{@word}" %></h1>
-
+<div class="col-md-6 col-md-offset-3 center">
+  <h1 >Anagrams for <%= "#{@word}" %></h1>
+<img src="/images/arrow.png" alt="arrow" style="width: 50px;height: 50px; text-align: center;" />
   <ul class="list">
     <% if !@anagrams.nil? %>
-      <% @anagrams.each do |item| %>
-        <li>
-          <%= "#{item.text}" %>
-        </li>
-      <% end %>
+        <% @anagrams.each do |item| %>
+          <li>
+            <%= "#{item.text}" %>
+          </li>
+        <% end %>
       <% else %>
-      <%= "No Anagrams for this word" %>
+        <%= "No Anagrams for this word" %>
     <% end %>
   </ul>
-
-
-  <!-- Example row of columns -->
-<p>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-link">Link</button>
-</p>
-
-  <div class="row">
-    <div class="col-lg-4">
-      <h2><header>
-      </header></h2>
-      <p class="text-danger">New Words</p>
-      <p><a class="btn btn-primary" href="/words/new" role="button">New Words &raquo;</a></p>
-    </div>
-    <div class="col-lg-4">
-      <h2>Heading</h2>
-      <p>See our Dictionary</p>
-      <p><a class="btn btn-primary" href="/words" role="button">View details &raquo;</a></p>
-   </div>
-    <div class="col-lg-4">
-      <h2>Heading</h2>
-      <p>Create another Anagram</p>
-      <p><a class="btn btn-primary" href="/" role="button">Home &raquo;</a></p>
-    </div>
-  </div>
-
-  <nav><a href="/words" class="danger">View all Words</a></nav>
-  <nav><a href="/words/new" class="danger">Add New Words here</a></nav><nav><a href="/" class="smallcaps">Back to Home</a></nav>
 </div>
