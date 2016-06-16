@@ -53,8 +53,7 @@ class Word<ActiveRecord::Base
  end
 end
 
-def self.order_of_dict(order)
-  if 
+
 
 =begin def self.three_letters?(input)
       if input.length == 3
